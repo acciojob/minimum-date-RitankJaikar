@@ -1,5 +1,24 @@
 function minDate(dates) {
-  //write you code here
+	//write you code here
+	let leastYear = Infinity;
+	let leastMonth = Infinity;
+	let leastDay = Infinity;
+	let minmDate = "";
+	let leastYearIndex= 0;
+	for(let i=0; i<dates.length; i++) {
+		let strArr = dates[i].split("/");
+		if(strArr[0]<=leastYear) {
+			leastYear= strArr[0];
+			if(strArr[1]<=leastMonth) {
+				leastMonth= strArr[1];
+				if(strArr[2]<=leastDay) {
+					leastDay= strArr[2];
+					minmDate = dates[i];
+				}
+			}
+		}
+	}
+	return minmDate;
 }
 
 // Do not change the code
